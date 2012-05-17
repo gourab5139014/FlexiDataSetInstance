@@ -10,15 +10,15 @@ package flexidatasetinstance;
  * @author Gourab
  */
 public class Column {
-private String name;
-     private int index;
-     private DataType type;
+    private String name;
+    private int index;
+    private DataType type;
 
-     public Object convert( String data ) {
-         if( type == DataType.NUMERIC ) {
-            return Double.parseDouble( data );
-         } else {
-            return data;
-         }
-     }
+    public Object convert( String data ) {
+        if( type == DataType.NUMERIC ) {
+           return Double.parseDouble( data );
+        } else {
+           return data;
+        }
+    }
 }

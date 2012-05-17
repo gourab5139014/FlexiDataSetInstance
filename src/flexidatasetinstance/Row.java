@@ -15,12 +15,12 @@ public class Row {
 private Object[] data;
 
      public void parse( String row, List<Column> columns ) {
-         String[] cols = data.split(",");
+         String[] cols = row.split(",");
          data = new Object[cols.length];
 
          int i = 0;
          for( Column col : columns ) {
-             data[i] = columns.convert(cols[i]);
+             data[i] = col.convert(cols[i]);
              i++;
          }
      }
