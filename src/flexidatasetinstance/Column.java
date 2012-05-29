@@ -15,13 +15,15 @@ public class Column {
     private DataType type;
     private boolean process;
 
-    public Column(int index, boolean process) {
+    public Column(int index, int process) {
         this.index = index;
-        this.process = process;
+        this.process = (process==1?true:false);
+        //System.out.println("Set in Column constructor #"+this.index+" process? "+this.process);
     }
 
     public void setType(DataType type) {
         this.type = type;
+        System.err.println("Created Column for #"+this.index+" "+this.type+" process? "+this.process);
     }
 
 
