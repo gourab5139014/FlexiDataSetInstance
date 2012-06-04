@@ -14,8 +14,16 @@ import java.util.List;
 public class Row {
 private Object[] data;
 
-     public void parse( String row, List<Column> columns ) {
-         System.err.println("Row parsing> "+row);
+    public String getClassValue()
+    {
+        return (String)data[data.length-1];
+    }
+    public Object getAtIndex(int i)
+    {
+        return data[i];
+    }
+    public void parse( String row, List<Column> columns ) {
+//         System.err.println("Row parsing> "+row);
          String[] cols = row.split(",");
          data = new Object[cols.length];
 

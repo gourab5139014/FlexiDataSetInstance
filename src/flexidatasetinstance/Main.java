@@ -5,6 +5,8 @@
 
 package flexidatasetinstance;
 
+import java.io.File;
+
 /**
  *
  * @author Gourab
@@ -16,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        FlexiInstance f = new FlexiInstance("Iris","data");
+        FlexiInstance f = new FlexiInstance("."+File.separator+"datasets"+File.separator+"Iris.data","."+File.separator+"datasets"+File.separator+"Iris.bitSet");
         f.run();
     }
 
