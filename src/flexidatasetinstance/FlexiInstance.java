@@ -161,7 +161,10 @@ public class FlexiInstance {
     {
         String[] result = new String[rows.size()];
         for (int j = 0; j < rows.size(); j++) {
-            result[j]=(String)rows.get(j).getAtIndex(i);
+            //System.out.println("Trying to cast - "+rows.get(j).getAtIndex(i));
+            if(rows.get(j).getAtIndex(i) instanceof String) result[j]=(String)rows.get(j).getAtIndex(i);
+            else
+            result[j]=Double.toString((Double)rows.get(j).getAtIndex(i));
 
         }
         return result;
