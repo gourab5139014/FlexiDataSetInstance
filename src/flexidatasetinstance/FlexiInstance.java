@@ -160,11 +160,14 @@ public class FlexiInstance {
     public String[] getByIndexString(int i)
     {
         String[] result = new String[rows.size()];
+        Object temp;
         for (int j = 0; j < rows.size(); j++) {
-            //System.out.println("Trying to cast - "+rows.get(j).getAtIndex(i));
-            if(rows.get(j).getAtIndex(i) instanceof String) result[j]=(String)rows.get(j).getAtIndex(i);
+            temp = rows.get(j).getAtIndex(i);
+            //System.out.println("Trying to cast - "+temp);
+            if(temp instanceof String) result[j]=(String)temp;
+            else if(temp instanceof Integer) result[j]=Integer.toString((Integer)temp);
             else
-            result[j]=Double.toString((Double)rows.get(j).getAtIndex(i));
+            result[j]=Double.toString((Double)temp);
 
         }
         return result;
